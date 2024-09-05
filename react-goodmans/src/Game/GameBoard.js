@@ -23,7 +23,6 @@ function GameBoard() {
 		}, 1200); 
 	} 
 
-	//this function helps in storing the firstCard and secondCard value 
 	function handleSelectedCards(item) { 
 		console.log(typeof item); 
 		if (firstCard !== null && firstCard.id !== item.id) { 
@@ -33,9 +32,6 @@ function GameBoard() {
 		} 
 	} 
 
-	// if two have been selected then we check if the images are same or not, 
-	//if they are same then we stop the flipping ability 
-	// else we turn them back 
 	React.useEffect(() => { 
 		if (firstCard && secondCard) { 
 			setStopFlip(true); 
@@ -59,8 +55,7 @@ function GameBoard() {
 		} 
 	}, [firstCard, secondCard]); 
 
-	//after the slected images have been checked for 
-	//equivalency we empty the firstCard and secondCard component 
+
 	function removeSelection() { 
 		setFirstCard(null); 
 		setSecondCard(null); 
@@ -68,7 +63,7 @@ function GameBoard() {
 		setMoves((prevValue) => prevValue + 1); 
 	} 
 
-	//starts the game for the first time. 
+
 	React.useEffect(() => { 
 		NewGame(); 
 	}, []); 
@@ -80,8 +75,7 @@ function GameBoard() {
 			</div> 
 			<div className="board"> 
 				{ 
-					// cards component help in coverting the 
-					// data from array to visible data for screen 
+
 					cardsArray.map((item) => ( 
 						<Card 
 							item={item} 

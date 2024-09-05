@@ -1,6 +1,5 @@
-// Card.js 
-//working of individual cards like the ability to toggle or flip and there design 
-//is carried out in this file 
+
+
 function Card({ item, handleSelectedCards, toggled, stopflip }) { 
 	return ( 
 		<div className="item"> 
